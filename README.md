@@ -2,7 +2,9 @@
 
 River walks!
 
-See map on 
+View geojson on a map on <https://geojson.io/#data=data:text/x-url,https%3A%2F%2Fraw.githubusercontent.com%2Falifeee%2Friver-walks%2Frefs%2Fheads%2Fmain%2Fall-river-walks.geojson>
+
+![screenshot of map website showing traces](images/geojson_map.png)
 
 How to get data, from [weeknote 2024/29](https://weeknotes.alifeee.co.uk/2024-29/).
 
