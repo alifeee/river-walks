@@ -2,6 +2,8 @@
 
 River walks!
 
+See map on 
+
 How to get data, from [weeknote 2024/29](https://weeknotes.alifeee.co.uk/2024-29/).
 
 ```text
@@ -17,4 +19,17 @@ to crop:
 
 sudo apt install gdal-bin
 ogr2ogr -clipsrc -1.47927 53.34511 -1.49590 53.35812 export2.geojson export.geojson
+```
+
+## combine geojson
+
+```bash
+endfile="all-river-walks.geojson"
+while read file; do
+  cat "${file}";
+done <<< $(find geojson -type f | sort -n) | jq -c --slurp '{
+    "type": "FeatureCollection",
+    "name": "combined",
+    "features": ([.[] | .features[0]])
+}' > "${endfile}"
 ```
